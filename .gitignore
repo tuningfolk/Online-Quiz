@@ -1,3 +1,6 @@
+#My addition
+Testing/
+client.sh
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -139,7 +142,7 @@ celerybeat.pid
 .envrc
 .venv
 env/
-venv/
+env/
 ENV/
 env.bak/
 venv.bak/

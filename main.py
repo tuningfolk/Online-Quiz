@@ -1,5 +1,5 @@
 from fastapi import FastAPI,HTTPException
-from typing import Union, List
+from typing import List
 from pydantic import BaseModel
 quizzes = []
 class Option(BaseModel):
@@ -7,24 +7,25 @@ class Option(BaseModel):
     text: str
 class QuestionOut(BaseModel):
     id: int
+    text: str
     options: List[Option] = []
 
-class QuestionIn(BaseModel):
-    id: int
+class Question(BaseModel):
+    text: str
     options: List[Option] = []
     correct_option_id: int
 
 class Quiz(BaseModel):
     id: int
     title: str
-    questions: List[QuestionIn] = []
+    questions: dict[int, Question] = {}
 
 class CreateQuiz(BaseModel):
     title: str
 
 class CreateQuestions(BaseModel):
     quiz_id: int
-    questions: List[QuestionIn] = []
+    questions: dict[int, Question] = {} #List[Question] = []
 class Response(BaseModel):
     question_id: int
     selected_option: int
@@ -42,7 +43,7 @@ def fetch(quiz_id: int):
 
     questions = quizzes[quiz_id].questions
     return [
-            QuestionOut(id=q.id, options=q.options) for q in questions
+            QuestionOut(id=id, text=q.text, options=q.options) for id,q in questions.items()
     ]
 
 @app.post("/create")
@@ -58,7 +59,7 @@ def add_questions(create_questions: CreateQuestions):
     if quiz_id<0 or quiz_id>=len(quizzes):
         raise HTTPException(status_code=404, detail="Item not found")
     questions = create_questions.questions
-    quizzes[quiz_id].questions += questions
+    quizzes[quiz_id].questions.update(questions)
     return {"quiz_id": quiz_id, "no_of_questions": len(questions)}
 
 @app.post("/submit")

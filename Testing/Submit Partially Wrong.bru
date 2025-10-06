@@ -1,0 +1,27 @@
+meta {
+  name: Submit Partially Wrong
+  type: http
+  seq: 7
+}
+
+post {
+  url: 127.0.0.1:8000/submit
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "quiz_id": 0,
+    "question_and_response": [
+      { "question_id": 0, "selected_option": 0 },
+      { "question_id": 1, "selected_option": 1 },
+      { "question_id": 2, "selected_option": 2 }
+    ]
+  }
+  
+}
+
+settings {
+  encodeUrl: true
+}

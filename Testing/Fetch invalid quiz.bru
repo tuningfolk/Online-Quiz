@@ -1,0 +1,15 @@
+meta {
+  name: Fetch invalid quiz
+  type: http
+  seq: 5
+}
+
+get {
+  url: 127.0.0.1:8000/fetch/999
+  body: formUrlEncoded
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

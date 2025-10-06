@@ -1,0 +1,51 @@
+meta {
+  name: Add questions
+  type: http
+  seq: 3
+}
+
+post {
+  url: 127.0.0.1:8000/add
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "quiz_id": 0,
+    "questions": {
+      "0": {
+        "text": "Who created Python?",
+        "options": [
+          { "id": 0, "text": "Guido van Rossum" },
+          { "id": 1, "text": "Elon Musk" },
+          { "id": 2, "text": "Bill Gates" }
+        ],
+        "correct_option_id": 0
+      },
+      "1": {
+        "text": "Which data type is immutable in Python?",
+        "options": [
+          { "id": 0, "text": "List" },
+          { "id": 1, "text": "Tuple" },
+          { "id": 2, "text": "Dictionary" }
+        ],
+        "correct_option_id": 1
+      },
+      "2": {
+        "text": "What keyword is used to define a function?",
+        "options": [
+          { "id": 0, "text": "function" },
+          { "id": 1, "text": "def" },
+          { "id": 2, "text": "lambda" }
+        ],
+        "correct_option_id": 1
+      }
+    }
+  }
+  
+}
+
+settings {
+  encodeUrl: true
+}

@@ -7,11 +7,7 @@ ASE Challenge
 |/create    |POST   |Create quiz with title             |
 |/add       |POST   |Add questions to a quiz-Q should have text, multiple options with one correct|
 |/fetch     |GET    |get all questions(without the answers) |
-|/submit    |POST   |submit answers-request body: array of question IDs and selected option IDs|
-|/score     |GET    |get score after /submit- should return {"score":3, total:"5"}|
-
-/create -- done
-/add -- done
+|/submit    |POST   |submit answers-request body: array of question IDs and selected option IDs, return score as {"score": 3, "total": 5}|
 
 ## Known Issues
 Implement a more realistic  way of db handling

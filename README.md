@@ -5,7 +5,7 @@ ASE Challenge
 |endpoint   |METHOD |Description                        |
 |-----------|-------|-----------------------------------|
 |/create    |POST   |Create quiz with title             |
-|/add       |POST   |Add questions to a quiz- Question should have text, multiple options with one correct|
+|/add       |POST   |Add questions to a quiz. Question should have text, multiple options with one correct|
 |/fetch     |GET    |Get all questions(without the answers) |
 |/submit    |POST   |Submit answers. Request body: array of question IDs and selected option IDs, return score as {"score": 3, "total": 5}|
 

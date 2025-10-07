@@ -26,3 +26,4 @@ fastapi dev main.py
 ## Testing
 Visit http://127.0.0.1:8000/docs to test all endpoints directly.
 
+I have used Bruno for API testing. For testcases in json format refer [Testing/json](Online-Quiz/tree/master/Testing/json)

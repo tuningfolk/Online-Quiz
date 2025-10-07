@@ -1,0 +1,10 @@
+# POST 127.0.0.1:8000/submit
+{
+  "quiz_id": 0,
+  "question_and_response": [
+    { "question_id": 0, "selected_option": 0 },
+    { "question_id": 1, "selected_option": 1 },
+    { "question_id": 2, "selected_option": 1 }
+  ]
+}
+

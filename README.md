@@ -23,5 +23,6 @@ pip install -r requirements.txt
 fastapi dev main.py
 ```
 
-
+## Testing
+Visit http://127.0.0.1:8000/docs to test all endpoints directly.
 
